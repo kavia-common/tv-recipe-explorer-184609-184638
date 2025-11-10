@@ -2,8 +2,32 @@
 <resources>
     <!-- Base application theme for Android TV -->
     <style name="AppTheme" parent="Theme.Leanback">
-        <!-- Customize your theme here -->
-        <item name="android:windowBackground">@color/tv_background</item>
-        <item name="android:colorPrimary">@color/tv_accent</item>
+        <item name="android:windowBackground">@color/ocean_background</item>
+        <item name="android:colorPrimary">@color/ocean_primary</item>
+        <item name="android:colorAccent">@color/ocean_secondary</item>
+    </style>
+
+    <!-- Text appearances -->
+    <style name="TextTitle">
+        <item name="android:textColor">@color/ocean_text</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextBody">
+        <item name="android:textColor">@color/ocean_text</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <!-- Card styles -->
+    <style name="RecipeCardContainer">
+        <item name="android:background">@color/ocean_surface</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <!-- Focus glow using state list -->
+    <style name="FocusableCard">
+        <item name="android:foreground">@drawable/focus_outline</item>
     </style>
 </resources>

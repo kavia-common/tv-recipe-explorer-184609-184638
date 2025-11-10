@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ocean_background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/content_padding">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/card_ripple"
+            android:focusable="true"
+            android:contentDescription="@string/back"
+            android:src="@android:drawable/ic_media_previous"
+            android:foreground="@drawable/focus_outline" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+        <ImageView
+            android:id="@+id/hero_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/hero_height"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/app_name" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <TextView
+            android:id="@+id/detail_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ocean_text"
+            android:textStyle="bold"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/detail_meta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tv_secondary"
+            android:textSize="18sp"
+            android:layout_marginTop="6dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ingredients"
+            android:textStyle="bold"
+            android:textColor="@color/ocean_text"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:id="@+id/ingredients_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/instructions"
+            android:textStyle="bold"
+            android:textColor="@color/ocean_text"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:id="@+id/steps_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,35 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout 
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="@color/ocean_background">
 
-    <TextView
-        android:id="@+id/title_text"
+    <!-- Safe area via guidelines -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="recipe_app_frontend"
-        android:textSize="48sp"
-        android:textColor="#FFFFFF"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/overscan_padding" />
 
-    <TextView
-        android:id="@+id/subtitle_text"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ready for rating screen integration"
-        android:textSize="24sp"
-        android:textColor="#CCCCCC"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_text" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/overscan_padding" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/overscan_padding" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="@dimen/overscan_padding" />
+
+    <!-- Side Navigation -->
+    <LinearLayout
+        android:id="@+id/side_nav"
+        android:layout_width="@dimen/side_nav_width"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="@color/ocean_surface"
+        android:padding="@dimen/side_nav_item_padding"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline_bottom"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right">
+
+        <Button
+            android:id="@+id/nav_home"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/side_nav_item_height"
+            android:text="@string/nav_home"
+            android:textAllCaps="false"
+            android:background="@drawable/card_ripple"
+            android:focusable="true"
+            android:foreground="@drawable/focus_outline"
+            android:textColor="@color/ocean_text" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <Button
+            android:id="@+id/nav_categories"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/side_nav_item_height"
+            android:text="@string/nav_categories"
+            android:textAllCaps="false"
+            android:background="@drawable/card_ripple"
+            android:focusable="true"
+            android:foreground="@drawable/focus_outline"
+            android:textColor="@color/ocean_text" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <Button
+            android:id="@+id/nav_favorites"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/side_nav_item_height"
+            android:text="@string/nav_favorites"
+            android:textAllCaps="false"
+            android:background="@drawable/card_ripple"
+            android:focusable="true"
+            android:foreground="@drawable/focus_outline"
+            android:textColor="@color/ocean_text" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <Button
+            android:id="@+id/nav_settings"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/side_nav_item_height"
+            android:text="@string/nav_settings"
+            android:textAllCaps="false"
+            android:background="@drawable/card_ripple"
+            android:focusable="true"
+            android:foreground="@drawable/focus_outline"
+            android:textColor="@color/ocean_text" />
+    </LinearLayout>
+
+    <!-- Main Content Container -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toEndOf="@id/side_nav"
+        app:layout_constraintEnd_toEndOf="@id/guideline_right"
+        app:layout_constraintTop_toTopOf="@id/guideline_top"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
