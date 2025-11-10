@@ -1,0 +1,4 @@
+{
+    "command": "./gradlew dependencies",
+    "working_directory": "/home/kavia/workspace/code-generation/tv-recipe-explorer-184609-184638/recipe_app_frontend"
+}
