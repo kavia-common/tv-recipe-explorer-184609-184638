@@ -70,7 +70,9 @@ class RecipeDetailFragment : Fragment() {
         // Steps
         stepsContainer.removeAllViews()
         r.steps.forEach { step ->
-            val tv = layoutInflater.inflate(R.layout/item_step_text, stepsContainer, false) as TextView
+            // Inflate using a context-bound inflater to ensure correct resource resolution
+            val tv = LayoutInflater.from(requireContext())
+                .inflate(R.layout.item_step_text, stepsContainer, false) as TextView
             tv.text = "${step.index}. ${step.instruction}"
             tv.isFocusable = true
             tv.movementMethod = ScrollingMovementMethod()
